@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('America/Los_Angeles');
     require_once __DIR__."/../vendor/autoload.php";
     require_once __DIR__."/../src/contact.php";
 
@@ -20,6 +21,16 @@
         return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll()));
     });
 
+    $app->post("/add-contacts", function() use ($app) {
+        $contact = new Contact($_POST['name'], $_POST['phone'], $_POST['email'], $_POST['street'], $_POST['city'], $_POST['state'], $_POST['city'], $_POST['zip'], $_POST['country']);
+        $contact->save();
+        return $app['twig']->render('create-contact.html.twig', array('newcontact' => $contact ));
+    });
+
+    $app->post("/delete-contacts", function() use ($app) {
+        Contact::deleteAll();
+        return $app['twig']->render('delete-contacts.html.twig');
+    });
 
     return $app;
 ?>

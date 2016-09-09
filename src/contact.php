@@ -3,7 +3,7 @@
     {
     // Properties
         private $name;
-        private $phone_number;
+        private $phone;
         private $email;
         private $street;
         private $city;
@@ -44,7 +44,7 @@
 
         function setPhone($new_phone)
         {
-            $this->phone = (integer) $new_phone;
+            $this->phone = (string) $new_phone;
         }
         //Email
         function getEmail()
@@ -102,7 +102,7 @@
 
         function setCountry($new_country)
         {
-            $this->country = $new_country;
+            $this->country = (string) $new_country;
         }
 
     // General Methods

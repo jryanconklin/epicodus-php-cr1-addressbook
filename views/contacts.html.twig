@@ -13,17 +13,18 @@
     <div class="container-fluid">
       <h1>J. Ryan Conklin</h1>
       <h3>Epicodus: PHP Fall 2016</h3>
-  </div>
+    </div>
   </header>
 
   <body>
     <div class="container">
+
       <h4>Here Are Your Contacts</h4>
 
 
       <h4>Fill Below to Add a Contact</h4>
       <hr>
-        <form action="/addcontacts" method="post">
+        <form action="/add-contacts" method="post">
           <div class="row">
             <div class="form-group">
               <label for="name" class="col-sm-2 col-form-label">Name:</label>
@@ -89,6 +90,10 @@
 
           <br><br><hr>
           <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <hr>
+        <form action="/delete-contacts" method="post">
+          <button type="submit" class="btn btn-danger">Clear All Contacts</button>
         </form>
     </div> <!-- End Main Container Div -->
     <footer id="#bottom" class="mainFooter">
