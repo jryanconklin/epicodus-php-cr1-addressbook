@@ -17,7 +17,7 @@ To use the code, you can clone the repository at [https://github.com/jryanconkli
 
 - Download the Repository
 - Install Silex and Twig via Composer
-- Open the "index.html" file in the Browser
+- Launch Project in Server Mode
 
 ## Specifications
 * Enter New Contact
