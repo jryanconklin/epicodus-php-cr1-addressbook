@@ -28,6 +28,20 @@ img {
   background-size: cover;
 }
 
+.address-block {
+  margin: 2em;
+}
+
+.address-list {
+  list-style: none;
+  line-height: 1.8em;
+  padding-bottom: 1em;
+}
+
+.address-list span {
+  font-weight: bold;
+}
+
 .mainSection,
 .mainFooter {
   text-align: center;
