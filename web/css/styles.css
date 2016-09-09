@@ -21,6 +21,7 @@ img {
 .mainHeader {
   padding: 20px;
   height: 150px;
+  margin-bottom: 10px;
   background: linear-gradient(#1D2120, transparent 50%),
               linear-gradient(0deg, #5A5C51, transparent),
               #795548 url('../img/mtn-landscape-1.jpg') no-repeat center;
@@ -33,7 +34,7 @@ img {
 }
 
 .container {
-  min-height: calc(100vh - 250px);
+  min-height: calc(100vh - 260px);
   text-align: center;
 }
 
