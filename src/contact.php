@@ -82,10 +82,9 @@
         }
         function setState($new_state)
         {
-            $this->state = (string) strtoupper($new_state);
+            $this->state = (string) $new_state;
         }
         //Zip
-        //Phone
         function getZip()
         {
             return $this->zip;
@@ -107,12 +106,22 @@
         }
 
     // General Methods
-
-
+        function save()
+        {
+            array_push($_SESSION['list_of_contacts'], $this);
+        }
 
 
     // Static Methods
+        function getAll()
+        {
+            return $_SESSION['list_of_contacts'];
+        }
 
+        function deleteAll()
+        {
+            $_SESSION['list_of_contacts'] = array();
+        }
 
     }
 ?>
