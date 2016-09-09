@@ -12,7 +12,7 @@
         private $country;
 
         //Contructor
-        function __construct($name, $phone = "text", $email = "text", $street = "text", $city = "text", $state = "text", $zip = "text", $country = "text")
+        function __construct($name, $phone, $email, $street, $city, $state, $zip, $country)
         {
             $this->name = $name;
             $this->phone = $phone;

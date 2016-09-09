@@ -20,19 +20,25 @@
     <div class="container">
       <h4>You Created a New Contact!</h4>
       <hr>
-      <ul>
-        <li>
-          <p>{{newcontact.getName}}</p>
-          <p>{{newcontact.getPhone}}</p>
-          <p>{{newcontact.getEmail}}</p>
-          <p>{{newcontact.getStreet}}</p>
-          <p>{{newcontact.getCity}}</p>
-          <p>{{newcontact.getState}}</p>
-          <p>{{newcontact.getZip}}</p>
-          <p>{{newcontact.getCountry}}</p>
-        </li>
-      </ul>
-
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <img class="card-img-top" src="img/address.png" alt="Adress Book Image" />
+            <div class="card-block">
+              <h5 class='card-title'>Name: <br>{{ contact.getName }}</h5>
+            </div>
+            <ul class="list-group list-group-flush address-list">
+              <li><span class="list-intro">Phone: </span>{{ newcontact.getPhone }}</li>
+              <li><span class="list-intro">Email: </span>{{ newcontact.getEmail }}</li>
+              <li><span class="list-intro">Street: </span>{{ newcontact.getStreet }}</li>
+              <li><span class="list-intro">City: </span>{{ newcontact.getCity }}</li>
+              <li><span class="list-intro">State: </span>{{ newcontact.getState }}</li>
+              <li><span class="list-intro">Zip: </span>{{ newcontact.getZip }}</li>
+              <li><span class="list-intro">Country: </span>{{ newcontact.getCountry }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <hr>
       <form action="/">
         <button type="submit" class="btn btn-primary">Return to Contacts</button>
