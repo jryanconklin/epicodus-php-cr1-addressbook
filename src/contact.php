@@ -1,7 +1,7 @@
 <?php
     class Contact
     {
-    // Properties
+        //Properties
         private $name;
         private $phone;
         private $email;
@@ -11,9 +11,8 @@
         private $zip;
         private $country;
 
-    // Constructor
-
-        function _construct($name, $phone, $email, $street, $city, $state, $zip, $country)
+        //Contructor
+        function __construct($name, $phone = "text", $email = "text", $street = "text", $city = "text", $state = "text", $zip = "text", $country = "text")
         {
             $this->name = $name;
             $this->phone = $phone;
@@ -25,16 +24,15 @@
             $this->country = $country;
         }
 
-    // Getter and Setter Methods
-        //Name
-        function getName()
-        {
-            return $this->name;
-        }
-
+        //Getter and Setter
         function setName($new_name)
         {
             $this->name = (string) $new_name;
+        }
+
+        function getName()
+        {
+            return $this->name;
         }
         //Phone
         function getPhone()
@@ -105,14 +103,13 @@
             $this->country = (string) $new_country;
         }
 
-    // General Methods
+        //General Functions
         function save()
         {
             array_push($_SESSION['list_of_contacts'], $this);
         }
 
-
-    // Static Methods
+        // Static Methods
         function getAll()
         {
             return $_SESSION['list_of_contacts'];
@@ -122,6 +119,6 @@
         {
             $_SESSION['list_of_contacts'] = array();
         }
-
     }
+
 ?>

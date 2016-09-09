@@ -19,82 +19,91 @@
   <body>
     <div class="container">
 
-      <h4>Here Are Your Contacts</h4>
-
+      {% if contact is not empty %}
+        <h4>Here Are Your Contacts</h4>
+        <ul>
+        {% for contact in contacts %}
+          <hr>
+          <li>
+            <h5>{{ contact.getName }}</h5>
+          </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
 
       <h4>Fill Below to Add a Contact</h4>
       <hr>
-        <form action="/add-contacts" method="post">
-          <div class="row">
-            <div class="form-group">
-              <label for="name" class="col-sm-2 col-form-label">Name:</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" placeholder="Full Name" name="name">
-              </div>
+      <form action="/add-contacts" method="post">
+        <div class="row">
+          <div class="form-group">
+            <label for="name" class="col-sm-2 col-form-label">Name:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" placeholder="Full Name" name="name">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group">
+            <label for="phone" class="col-sm-2 col-form-label">Phone:</label>
+            <div class="col-sm-4">
+              <input type="tel" class="form-control" id="phone" placeholder="111-111-1111" name="phone">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-sm-2 col-form-label">Email:</label>
+            <div class="col-sm-4">
+              <input type="email" class="form-control" id="email" placeholder="example@example.com" name="email">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group">
+            <label for="street" class="col-sm-2 col-form-label">Street:</label>
+            <div class="col-sm-5">
+              <input type="street" class="form-control" id="street" placeholder="111 Example Dr" name="street">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="city" class="col-sm-1 col-form-label">City:</label>
+            <div class="col-sm-4">
+              <input type="city" class="form-control" id="city" placeholder="Portland" name="city">
+            </div>
+          </div>
+        </div> <!-- End Form Row  -->
+
+        <div class="row">
+          <div class="form-group">
+            <label for="state" class="col-sm-2 col-form-label">State:</label>
+            <div class="col-sm-2">
+              <input type="state" class="form-control" id="state" placeholder="OR" name="state">
             </div>
           </div>
 
-          <div class="row">
-            <div class="form-group">
-              <label for="phone" class="col-sm-2 col-form-label">Phone:</label>
-              <div class="col-sm-4">
-                <input type="tel" class="form-control" id="phone" placeholder="111-111-1111" name="phone">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="email" class="col-sm-2 col-form-label">Email:</label>
-              <div class="col-sm-4">
-                <input type="email" class="form-control" id="email" placeholder="example@example.com" name="email">
-              </div>
+          <div class="form-group">
+            <label for="zip" class="col-sm-1 col-form-label">Zip:</label>
+            <div class="col-sm-2">
+              <input type="zip" class="form-control" id="zip" placeholder="12345" name="zip">
             </div>
           </div>
 
-          <div class="row">
-            <div class="form-group">
-              <label for="street" class="col-sm-2 col-form-label">Street:</label>
-              <div class="col-sm-5">
-                <input type="street" class="form-control" id="street" placeholder="111 Example Dr" name="street">
-              </div>
+          <div class="form-group">
+            <label for="country" class="col-sm-1 col-form-label">Country:</label>
+            <div class="col-sm-4">
+              <input type="country" class="form-control" id="country" placeholder="United States" name="country">
             </div>
-            <div class="form-group">
-              <label for="city" class="col-sm-1 col-form-label">City:</label>
-              <div class="col-sm-4">
-                <input type="city" class="form-control" id="city" placeholder="Portland" name="city">
-              </div>
-            </div>
-          </div> <!-- End Form Row  -->
+          </div>
 
-          <div class="row">
-            <div class="form-group">
-              <label for="state" class="col-sm-2 col-form-label">State:</label>
-              <div class="col-sm-2">
-                <input type="state" class="form-control" id="state" placeholder="OR" name="state">
-              </div>
-            </div>
+        </div> <!-- End Form Row -->
 
-            <div class="form-group">
-              <label for="zip" class="col-sm-1 col-form-label">Zip:</label>
-              <div class="col-sm-2">
-                <input type="zip" class="form-control" id="zip" placeholder="12345" name="zip">
-              </div>
-            </div>
-
-              <div class="form-group">
-                <label for="country" class="col-sm-1 col-form-label">Country:</label>
-                <div class="col-sm-4">
-                  <input type="country" class="form-control" id="country" placeholder="United States" name="country">
-                </div>
-              </div>
-
-          </div> <!-- End Form Row -->
-
-          <br><br><hr>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        <hr>
-        <form action="/delete-contacts" method="post">
-          <button type="submit" class="btn btn-danger">Clear All Contacts</button>
-        </form>
+        <br><br><hr>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <hr>
+      <form action="/delete-contacts" method="post">
+        <button type="submit" class="btn btn-danger">Clear All Contacts</button>
+      </form>
     </div> <!-- End Main Container Div -->
     <footer id="#bottom" class="mainFooter">
       <p>All Rights Reserved to J. Ryan Conklin for the Website.</p>
