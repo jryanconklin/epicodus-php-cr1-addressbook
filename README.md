@@ -13,8 +13,6 @@ PHP, Silex, Twig, HTML, CSS, and BootStrap.
 
 ## Usage
 
-To view the site, please visit my gh-pages at: [https://jryanconklin.github.io/epicodus-php-cr1-addressbook/](https://jryanconklin.github.io/epicodus-php-cr1-addressbook/).
-
 To use the code, you can clone the repository at [https://github.com/jryanconklin/epicodus-php-cr1-addressbook](https://github.com/jryanconklin/epicodus-php-cr1-addressbook).
 
 - Download the Repository
